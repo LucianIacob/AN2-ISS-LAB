@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="numeModelStoreContainer" CdmEntityContainer="numeEntities">
+    <EntitySetMapping Name="Administrator">
+      <EntityTypeMapping TypeName="numeModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Costumer">
+      <EntityTypeMapping TypeName="numeModel.Costumer">
+        <MappingFragment StoreEntitySet="Costumer">
+          <ScalarProperty Name="cod_unic" ColumnName="cod_unic" />
+          <ScalarProperty Name="prenume" ColumnName="prenume" />
+          <ScalarProperty Name="nume" ColumnName="nume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Book">
+      <EntityTypeMapping TypeName="numeModel.Book">
+        <MappingFragment StoreEntitySet="Book">
+          <ScalarProperty Name="cod_carte" ColumnName="cod_carte" />
+          <ScalarProperty Name="autor" ColumnName="autor" />
+          <ScalarProperty Name="titlu" ColumnName="titlu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BorrowedBook">
+      <EntityTypeMapping TypeName="numeModel.BorrowedBook">
+        <MappingFragment StoreEntitySet="BorrowedBook">
+          <ScalarProperty Name="cod_abonat" ColumnName="cod_abonat" />
+          <ScalarProperty Name="cod_carte" ColumnName="cod_carte" />
+          <ScalarProperty Name="autor" ColumnName="autor" />
+          <ScalarProperty Name="titlu" ColumnName="titlu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

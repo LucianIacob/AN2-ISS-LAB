@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="numeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="numeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+    <EntitySet Name="Costumer" EntityType="numeModel.Costumer" />
+    <EntitySet Name="Book" EntityType="numeModel.Book" />
+    <EntitySet Name="BorrowedBook" EntityType="numeModel.BorrowedBook" />
+  </EntityContainer>
+  <EntityType Name="Costumer">
+    <Key>
+      <PropertyRef Name="cod_unic" />
+    </Key>
+    <Property Name="nume" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="prenume" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cod_unic" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="cod_carte" />
+    </Key>
+    <Property Name="titlu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="autor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cod_carte" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BorrowedBook">
+    <Key>
+      <PropertyRef Name="cod_carte" />
+    </Key>
+    <Property Name="titlu" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="autor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cod_carte" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cod_abonat" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

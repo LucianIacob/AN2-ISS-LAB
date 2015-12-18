@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="numeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="cod_carte" />
+    </Key>
+    <Property Name="titlu" Type="varchar" MaxLength="30" />
+    <Property Name="autor" Type="varchar" MaxLength="20" />
+    <Property Name="cod_carte" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BorrowedBook">
+    <Key>
+      <PropertyRef Name="cod_carte" />
+    </Key>
+    <Property Name="titlu" Type="varchar" MaxLength="30" />
+    <Property Name="autor" Type="varchar" MaxLength="20" />
+    <Property Name="cod_carte" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="cod_abonat" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Costumer">
+    <Key>
+      <PropertyRef Name="cod_unic" />
+    </Key>
+    <Property Name="nume" Type="varchar" MaxLength="20" />
+    <Property Name="prenume" Type="varchar" MaxLength="20" />
+    <Property Name="cod_unic" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="numeModelStoreContainer">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BorrowedBook" EntityType="Self.BorrowedBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Costumer" EntityType="Self.Costumer" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
